@@ -6,18 +6,21 @@ public class Converter {
 	
 	public static void main(String[] args) {
 		
-		Converter c= new Converter();
-		System.out.println("Please make a Selection: " + 
-				"\n" + "1. Volume Conversions " + 
-				"\n" + "2. Distance Conversions " + 
-				"\n" + "3. Quit" + "\n");
-		Scanner input = new Scanner(System.in);
-		int msg = input.nextInt();
-		int menuSelection= Integer.valueOf(msg);
-
+	
+		int menuSelection=0;
 		
 		
 		while (menuSelection != 3) {
+			
+			Converter c= new Converter();
+			System.out.println("Please make a Selection: " + 
+					"\n" + "1. Volume Conversions " + 
+					"\n" + "2. Distance Conversions " + 
+					"\n" + "3. Quit" + "\n");
+			Scanner input = new Scanner(System.in);
+			int msg = input.nextInt();
+			//int menuSelection= Integer.valueOf(msg);
+
 			
 			if (menuSelection == 1) {
 				
@@ -36,9 +39,9 @@ public class Converter {
 				switch(menuSelection) {
 				
 				case 1:{
-					System.out.println("Cup(s) to Teaspoons: \nPlease enter an Integer value to convert:\n" + volCon);
-					c.cupToTeaspoon(volCon);
-					System.out.println(volCon + " Cup(s) is equivilent to " + volCon + "2 Teaspoon(s)");
+					System.out.println("Cup(s) to Teaspoons: \nPlease enter an Integer value to convert:\n");
+					
+					System.out.println(volCon + " Cup(s) is equivilent to " + c.cupToTeaspoon(volCon) + " Teaspoon(s)");
 					
 					break;}
 				case 2:{
