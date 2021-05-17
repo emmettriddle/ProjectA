@@ -12,7 +12,7 @@ public class Converter {
 				"\n" + "2. Distance Conversions " + 
 				"\n" + "3. Quit" + "\n");
 		Scanner input = new Scanner(System.in);
-		String msg = input.nextLine();
+		int msg = input.nextInt();
 		int menuSelection= Integer.valueOf(msg);
 
 		
@@ -20,32 +20,35 @@ public class Converter {
 		while (menuSelection != 3) {
 			
 			if (menuSelection == 1) {
-				Scanner volume = new Scanner(System.in);
-				String msgV = volume.nextLine();
+				
 				System.out.println("Volume Conversions Select One:");
 				System.out.println("1. Cups to Teaspoons: ");
 				System.out.println("2. Teaspoons to Cups: ");
 				System.out.println("3. US Gallon to Imperial Gallon: ");
 				System.out.println("4. Imperial Gallon to US Gallon: ");
 				System.out.println("5. Exit Conversion: ");
+				menuSelection= input.nextInt();
+				Scanner volume = new Scanner(System.in);
+				String msgV = volume.nextLine();
 				float volCon= Float.valueOf(msgV);
+				
 				
 				switch(menuSelection) {
 				
 				case 1:{
-					System.out.println("Cups to Teaspoons: \nPlease enter an Integer value to convert:\n" + volCon);
+					System.out.println("Cup(s) to Teaspoons: \nPlease enter an Integer value to convert:\n" + volCon);
 					c.cupToTeaspoon(volCon);
-					System.out.println(volCon + " Cups is equivilent to " + volCon + "2 Teaspoons");
+					System.out.println(volCon + " Cup(s) is equivilent to " + volCon + "2 Teaspoon(s)");
 					
 					break;}
 				case 2:{
-					System.out.println("Teaspoons to Cups: \nPlease enter an Integer value to convert: \n" + volCon);
+					System.out.println("Teaspoon(s) to Cups: \nPlease enter an Integer value to convert: \n" + volCon);
 					c.teaspoonToCup(volCon);
 					System.out.println(volCon + " Teaspoons is equivilent to " + volCon + " Cups");
 					
 					break;}
 				case 3:{
-					System.out.println("US Gallon to Imperial Gallon: \nPlease enter an Integer value to convert:\n" + volCon);
+					System.out.println("US Gallon(s) to Imperial Gallon: \nPlease enter an Integer value to convert:\n" + volCon);
 					c.usGalToImpGal(volCon);
 					System.out.println(volCon + " US Gallons is equivilent to " + volCon + " Imperial Gallons");
 					
@@ -65,12 +68,13 @@ public class Converter {
 				
 			}//code block for volume conversion
 			else if (menuSelection == 2) {
-				Scanner distance = new Scanner(System.in);
-				String msgD = distance.nextLine();
+				
 				System.out.println("Distance Conversions Select One");
 				System.out.println("1. Miles to Kilometers: ");
 				System.out.println("2. Kilometers to Miles: ");
 				System.out.println("3. Exit Conversion: ");
+				Scanner distance = new Scanner(System.in);
+				String msgD = distance.nextLine();
 				float distCon= Float.valueOf(msgD);				
 				
 				switch(menuSelection) {
@@ -101,8 +105,8 @@ public class Converter {
 	}// end of main
 	
 	public float cupToTeaspoon(float vol) {
-		vol *= 48;
-		return vol;
+		
+		return vol = vol * 48;
 	}
 	
 	public float usGalToImpGal(float vol) {
@@ -111,8 +115,8 @@ public class Converter {
 	}
 	
 	public float teaspoonToCup(float vol) {
-		vol /= 48;
-		return vol;
+		
+		return vol /= 48;
 	}
 	
 	public float impGalToUsGal(float vol) {
